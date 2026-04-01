@@ -16,4 +16,4 @@ MonoBehaviour:
   enemies_Start_Amount: 1
   enemies_Prefab:
   - {fileID: 8631018011428094719, guid: 2f4b3639d6773e2469d4b2779be0ca14, type: 3}
-  round_Time: 30
+  round_Time: 90

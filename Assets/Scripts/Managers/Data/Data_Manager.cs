@@ -7,14 +7,15 @@ using UnityEngine;
 public class Data_Manager : MonoBehaviour
 {
     internal Action<int> Score_Update;
-    private int score;
-    private int best_Score;
+    [SerializeField] internal int score;
+    [SerializeField] private Data_To_Save data;
 
     private string path;
 
-    private void Awake()
+    private void Start()
     {
         path = Application.persistentDataPath + "/Score";
+        Debug.Log("archivo en: " + path);
         Game_Events.Game_Lost += Save_Score;
         Game_Events.Game_Won += Save_Score;
         Check_Score();
@@ -45,19 +46,20 @@ public class Data_Manager : MonoBehaviour
         }
     }
 
-    public void Save_Score()
+    private void Save_Score()
     {
-        if (best_Score > score)
-        {
-            best_Score = score;
-            string json = JsonUtility.ToJson(best_Score);
-            File.WriteAllText(path, json);
-        }
+        Debug.Log(data.best_Score >= score);
+        if (data.best_Score >= score) { return; }
+        
+        Debug.Log("Save");
+        data.best_Score = score;
+        string json = JsonUtility.ToJson(data);
+        File.WriteAllText(path, json);
     }
 
     private void Load_Score()
     {
         string json = File.ReadAllText(path);
-        best_Score = JsonUtility.FromJson<int>(json);
+        data = JsonUtility.FromJson<Data_To_Save>(json);
     }
 }

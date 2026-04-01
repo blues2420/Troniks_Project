@@ -18,7 +18,7 @@ public class Health_System : MonoBehaviour
 
     public Action<float> health_Changed; 
 
-    protected virtual void Awake()
+    protected virtual void OnEnable()
     {
         life = max_Life;
     }

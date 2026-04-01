@@ -33,7 +33,7 @@ public class Character_Idle_State : Base_Character_State
         character.movement.Resume_Movement();
     }
 
-    private bool To_Run() => character.movement.move_Value.x != 0f;
+    private bool To_Run() => character.movement.move_Value != Vector2.zero;
     private bool To_Defend() => character.is_Defending;
     private bool To_Attack() => character.is_Attacking;
 }

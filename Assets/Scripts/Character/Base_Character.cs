@@ -29,9 +29,9 @@ public class Base_Character : Health_System
     internal Action die;
     
 
-    protected override void Awake()
+    protected override void OnEnable()
     {
-        base.Awake();
+        base.OnEnable();
         Initialize_Components();
         Initialize_State_Machine();
         

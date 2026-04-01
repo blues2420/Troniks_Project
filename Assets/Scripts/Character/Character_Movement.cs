@@ -20,7 +20,7 @@ public class Character_Movement : MonoBehaviour
     public void Move()
     {
         if (!can_Move) { return; }
-        character.rigid.velocity = new(move_Value.x * character.character_Vars.speed, character.rigid.velocity.y);
+        character.rigid.velocity = new(move_Value.x * character.character_Vars.speed, move_Value.y * character.character_Vars.speed);
         if (do_Flip) Flip();
     }
 
@@ -29,7 +29,7 @@ public class Character_Movement : MonoBehaviour
     public void Stop_Movement()
     {
         can_Move = false;
-        character.rigid.velocity = new(0f, character.rigid.velocity.y);
+        character.rigid.velocity = new(0f, 0f);
     }
 
     private void Flip()

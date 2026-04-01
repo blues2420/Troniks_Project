@@ -16,16 +16,18 @@ public class Game_UI : MonoBehaviour
     private void Start()
     {
         data.Score_Update += Update_Score;
+        timer.Add_To_Timer(game.timer_Name, Timer_Event.Update, Update_Timer);
+    }
+
+    private void OnDisable()
+    {
+        data.Score_Update -= Update_Score;
+        timer.Remove_Fuc_Timer(game.timer_Name, Timer_Event.Update, Update_Timer);
     }
 
     private void Update_Score(int score)
     {
         score_Txt.text = score.ToString();
-    }
-
-    private void Update()
-    {
-        
     }
 
     private void Update_Timer()
