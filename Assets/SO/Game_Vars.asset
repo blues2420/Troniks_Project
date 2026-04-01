@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e36173adffe12b4a8432c0403aae0ec, type: 3}
+  m_Name: Game_Vars
+  m_EditorClassIdentifier: 
+  enemies_Amount: 10
+  enemies_Start_Amount: 1
+  enemies_Prefab:
+  - {fileID: 8631018011428094719, guid: 2f4b3639d6773e2469d4b2779be0ca14, type: 3}
+  round_Time: 30

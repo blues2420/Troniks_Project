@@ -7,4 +7,5 @@ public class Characters_Vars : ScriptableObject
 {
     [SerializeField] internal float speed;
     [SerializeField] internal float attack_Cooldown;
+    [SerializeField] internal float healing_To_Player;
 }

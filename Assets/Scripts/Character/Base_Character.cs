@@ -26,11 +26,12 @@ public class Base_Character : Health_System
     internal bool attack_Ended = true;
     [SerializeField] private List<Base_Attack> attacks;
 
-    protected Action die;
+    internal Action die;
     
 
     protected override void Awake()
     {
+        base.Awake();
         Initialize_Components();
         Initialize_State_Machine();
         

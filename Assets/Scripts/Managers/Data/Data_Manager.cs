@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Data_Manager : MonoBehaviour
 {
+    internal Action<int> Score_Update;
     private int score;
     private int best_Score;
 
@@ -14,12 +15,21 @@ public class Data_Manager : MonoBehaviour
     private void Awake()
     {
         path = Application.persistentDataPath + "/Score";
+        Game_Events.Game_Lost += Save_Score;
+        Game_Events.Game_Won += Save_Score;
         Check_Score();
+    }
+
+    private void OnDisable()
+    {
+        Game_Events.Game_Lost -= Save_Score;
+        Game_Events.Game_Won -= Save_Score;
     }
 
     public void Add_Score(int amount)
     {
         score += amount;
+        Score_Update?.Invoke(score);
     }
 
     private void Check_Score()

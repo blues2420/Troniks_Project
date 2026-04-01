@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Warrior
   m_EditorClassIdentifier: 
   speed: 5
-  attack_Cooldown: 1
+  attack_Cooldown: 0.3

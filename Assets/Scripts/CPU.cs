@@ -23,6 +23,7 @@ public class CPU : MonoBehaviour
     {
         TryGetComponent(out character);
         player = FindFirstObjectByType<Player>().transform;
+        character.die += Dead;
     }
 
     private void Update()
@@ -38,6 +39,6 @@ public class CPU : MonoBehaviour
     private void Dead()
     {
         data.Add_Score(1);
-        enemies_Spawn.Next_Enemy();
+        enemies_Spawn.Next_Enemy(character);
     }
 }
